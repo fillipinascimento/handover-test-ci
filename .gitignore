@@ -1,23 +1,50 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+node_modules
+src/config/token.json
+src/config/credentials.json
+tmp/*
+token.json
+credentials.json
+get-api-token.js
+.env
+test*
+dir
+dist
+build
+credentials
+fullcredentials.ts
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
 
-# testing
-/coverage
+# .tfstate files
+*.tfstate
+*.tfstate.*
 
-# production
-/build
+# Crash log files
+crash.log
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
+.tfvars
+terraform.tfvars
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Ignore override files as they are usually used to override resources locally and so
+# are not checked in
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do wish to add to version control using negated pattern
+# !example_override.tf
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+# example: *tfplan*
+
+# End of https://www.gitignore.io/api/python,terraform
+.vscode
+

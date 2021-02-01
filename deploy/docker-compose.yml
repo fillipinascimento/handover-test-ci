@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  terraform:
+    image: hashicorp/terraform:0.12.21
+    volumes:
+      - .:/infra
+    working_dir: /infra
+    environment:
+      - AWS_ACCESS_KEY=AKIA6AEOOU2QQ5VSG66B
+      - AWS_SECRET_KEY=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
