@@ -7,5 +7,5 @@ services:
       - .:/infra
     working_dir: /infra
     environment:
-      - AWS_ACCESS_KEY=AKIA6AEOOU2QQ5VSG66B
-      - AWS_SECRET_KEY=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
+      - AWS_ACCESS_KEY=AWS_ACCESS_KEY
+      - AWS_SECRET_KEY=AWS_SECRET_KEY
