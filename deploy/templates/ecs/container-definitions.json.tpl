@@ -1,7 +1,7 @@
 [
     {
         "name": "test",
-        "image": "${app_image}",
+        "image": "handover-teste",
         "essential": true,
         "memoryReservation": 256,
         "logConfiguration": {
