@@ -50,20 +50,20 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$SHORT_SHA .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$SHORT_SHA
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$SHORT_SHA"
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:handover-teste .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:handover-teste
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:handover-teste"
 
       - name: Staging Plan
         run: |
-          export TF_VAR_ecr_image_api=$ECR_REPOSITORY:$SHORT_SHA
+          export TF_VAR_ecr_image_api=$ECR_REPOSITORY:handover-teste
           terraform init
           terraform workspace select staging || terraform workspace new staging
           terraform plan
 
       - name: Staging Apply
         run: |
-          export TF_VAR_ecr_image_api=$ECR_REPOSITORY:$SHORT_SHA
+          export TF_VAR_ecr_image_api=$ECR_REPOSITORY:handover-teste
           terraform init
           terraform workspace select staging
           terraform apply -auto-approve
